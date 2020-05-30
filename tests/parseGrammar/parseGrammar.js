@@ -4,11 +4,28 @@ const u = require("wlj-utilities");
 const parseGrammar = require("../../library/parseGrammar.js");
 
 u.scope(__filename, x => {
-    // TODO
     u.assertIsEqualJson(() => parseGrammar(
-        ['a aa']), 
-        {rules:[{left:'a',right:'aa'}]})
+        ['a | a a']),
+        {
+            rules: [{ left: ['a'], right: ['a', 'a'] }],
+            proofs: [],
+        })
     u.assertIsEqualJson(() => parseGrammar(
-        ['a aa', 'b ba']),
-        {rules:[{left:'a',right:'aa'},{left:'b',right:'ba'}]})
+        ['a | a a', 'b | b a']),
+        {
+            rules: [
+                { left: ['a'], right: ['a', 'a'] },
+                { left: ['b'], right: ['b', 'a'] },
+            ],
+            proofs: []
+        })
+    u.assertIsEqualJson(() => parseGrammar(
+        ['a | a a', 'b | b a', '', 'a', 'a a', 'a a a']),
+        {
+            rules: [
+                { left: ['a'], right: ['a', 'a'] },
+                { left: ['b'], right: ['b', 'a'] }
+            ],
+            proofs: [[['a'], ['a', 'a'], ['a', 'a', 'a']]]
+        });
 });
