@@ -14,18 +14,22 @@ function isValidProof(rules, proof) {
         u.assert(() => u.isArray(proof));
         u.loop(proof, step => {
             u.assertIsStringArray(step);
-        })
+        });
 
+        result = {};
+        result.valid = true;
+
+        // For each proof step, starting at the second step.
         u.merge(x, {step:'processing proof steps'});
         u.loop(u.range(proof.length - 1, 1), (currentIndex) => {
+            // Assume the step is invalid.
             let validStep = false;
 
+            // Get the previous step and current step from the index.
             let previousIndex = currentIndex - 1;
             u.merge(x, {previousIndex});
-
             let previous = proof[previousIndex];
             u.merge(x, {previous});
-
             let current = proof[currentIndex];            
 
             let allS = [];
@@ -49,7 +53,11 @@ function isValidProof(rules, proof) {
             u.merge(x, {allS});
             u.merge(x, {validStep});
 
-            result = validStep;
+            // If the step is not valid, the whole proof is not valid.
+            if (!validStep) {
+                result.valid = false;
+                u.merge(result, {current,previous});
+            }
         });
     });
     return result;

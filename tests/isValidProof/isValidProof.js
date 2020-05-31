@@ -13,7 +13,10 @@ u.scope(__filename, x => {
         'a a'.split(' '),
         'a a a'.split(' ')
     ];
-    u.assert(() => isValidProof(rules, proof));
+    u.merge(x, { rules, proof });
+    u.assertIsEqualJson(
+        () => isValidProof(rules, proof),
+        { valid: true });
 
     rules = [{ left: 'a'.split(' '), right: 'b'.split(' ') }];
     proof = [
@@ -22,11 +25,29 @@ u.scope(__filename, x => {
         'b a b'.split(' '),
         'b b b'.split(' ')
     ];
-    u.assert(() => isValidProof(rules, proof));
+    u.merge(x, { rules, proof });
+    u.assertIsEqualJson(
+        () => isValidProof(rules, proof),
+        { valid: true });
+
+    rules = [{ left: 'a'.split(' '), right: 'b'.split(' ') }];
+    proof = [
+        'a a c'.split(' '),
+        'b a b'.split(' '),
+        'b b b'.split(' ')
+    ];
+    u.merge(x, { rules, proof });
+    u.assertIsEqualJson(
+        () => isValidProof(rules, proof),
+        {
+            "valid": false,
+            "current": ["b", "a", "b"],
+            "previous": ["a", "a", "c"]
+        });
 
     rules = [
         { left: 'a'.split(' '), right: 'b'.split(' ') },
-        { left: 'b'.split(' '), right: ''.split(' ') }
+        { left: 'b'.split(' '), right: [] }
     ];
     proof = [
         'a a a'.split(' '),
@@ -35,7 +56,10 @@ u.scope(__filename, x => {
         'b b b'.split(' '),
         'b b'.split(' '),
         'b'.split(' '),
-        ''.split(' ')
+        []
     ];
-    u.assert(() => isValidProof(rules, proof));
+    u.merge(x, { rules, proof });
+    u.assertIsEqualJson(
+        () => isValidProof(rules, proof),
+        { valid: true });
 });
