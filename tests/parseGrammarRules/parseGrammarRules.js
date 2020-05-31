@@ -16,7 +16,4 @@ u.scope(__filename, x => {
     // Rules must come first
     u.assertThrows(() => parseGrammarRules(
         ['a | a a', 'b | b a', '', 'a', 'a a', 'a a a', 'c | b a']));
-    // Cannot contain duplicate rule 
-    u.assertThrows(() => parseGrammarRules(
-        ['a | a a', 'a | a a']));
 });
