@@ -8,3 +8,4 @@ require("./tests/parseGrammar/parseGrammar.js");
 require("./tests/assertGrammarRulesAreUnique/assertGrammarRulesAreUnique.js");
 require("./tests/validateGrammar/validateGrammar.js");
 require("./tests/isValidSubstitution/isValidSubstitution.js");
+require("./tests/isValidProof/isValidProof.js");
