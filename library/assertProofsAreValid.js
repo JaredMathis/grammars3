@@ -1,5 +1,6 @@
 
 const u = require("wlj-utilities");
+const isValidProof = require("./isValidProof");
 
 module.exports = assertProofsAreValid;
 
@@ -9,8 +10,14 @@ function assertProofsAreValid(rules, proofs) {
         u.assert(() => u.isArray(rules));
         u.assert(() => u.isArray(proofs));
 
-        u.loop(proofs, p => u.assertIsStringArrayNested(() => p));
-        
+        let newRules = rules.slice(0);
+        u.loop(proofs, proof => {
+            u.assertIsStringArrayNested(() => proof);
+
+            let valid = isValidProof(newRules, proof);
+            u.assert(() => valid.valid === true);
+            newRules.push({ left: proof[0], right: u.arrayLast(proof) });
+        });
     });
     return result;
 }
