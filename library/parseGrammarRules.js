@@ -20,6 +20,8 @@ function parseGrammarRules(lines) {
                 let right = parts[1].trim().split(' ');
                 let rule = { left, right };
                 result.push(rule);
+            } else if (line === "") {
+                // Empty lines are okay to have with the initial rules
             } else {
                 // We have something other than a rule.
                 rules = false;

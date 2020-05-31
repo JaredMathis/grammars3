@@ -9,3 +9,4 @@ require("./tests/assertRulesAreUnique/assertRulesAreUnique.js");
 require("./tests/validateGrammar/validateGrammar.js");
 require("./tests/isValidSubstitution/isValidSubstitution.js");
 require("./tests/isValidProof/isValidProof.js");
+require("./tests/assertProofsAreValid/assertProofsAreValid.js");

@@ -10,6 +10,7 @@ function validateGrammar(grammar) {
         u.assertIsArray(() => grammar.proofs);
 
         assertRulesAreUnique(grammar.rules);
+        assertProofsAreValid(grammar.rules, grammar.proofs);
     });
     return result;
 }
