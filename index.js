@@ -12,3 +12,6 @@ module.exports.assertRulesAreUnique = require("./library/assertRulesAreUnique.js
 module.exports.isValidSubstitution = require("./library/isValidSubstitution.js");
 module.exports.isValidProof = require("./library/isValidProof.js");
 module.exports.assertProofsAreValid = require("./library/assertProofsAreValid.js");
+module.exports.prove = require("./library/prove.js");
+module.exports.tokens = require("./library/tokens.js");
+module.exports.substitute = require("./library/substitute.js");

@@ -10,3 +10,6 @@ require("./tests/validateGrammar/validateGrammar.js");
 require("./tests/isValidSubstitution/isValidSubstitution.js");
 require("./tests/isValidProof/isValidProof.js");
 require("./tests/assertProofsAreValid/assertProofsAreValid.js");
+require("./tests/substitute/substitute.js");
+require("./tests/prove/prove.js");
+require("./tests/tokens/tokens.js");
