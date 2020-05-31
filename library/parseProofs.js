@@ -2,11 +2,11 @@
 const u = require("wlj-utilities");
 const isProofLine = require("./isProofLine");
 
-module.exports = parseGrammarProofs;
+module.exports = parseProofs;
 
-function parseGrammarProofs(lines) {
+function parseProofs(lines) {
     let result;
-    u.scope(parseGrammarProofs.name, x => {
+    u.scope(parseProofs.name, x => {
         u.assertIsStringArray(() => lines);
 
         result = [];

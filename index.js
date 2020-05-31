@@ -1,7 +1,7 @@
 module.exports = {};
 module.exports.loadGrammar = require("./library/loadGrammar.js");
 module.exports.parseGrammar = require("./library/parseGrammar.js");
-module.exports.parseGrammarProofs = require("./library/parseGrammarProofs.js");
+module.exports.parseProofs = require("./library/parseProofs.js");
 module.exports.isProofLine = require("./library/isProofLine.js");
 module.exports.assertIsTokens = require("./library/assertIsTokens.js");
 module.exports.isRuleLine = require("./library/isRuleLine.js");

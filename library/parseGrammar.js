@@ -1,6 +1,6 @@
 
 const u = require("wlj-utilities");
-const parseGrammarProofs = require("./parseGrammarProofs");
+const parseProofs = require("./parseProofs");
 const parseGrammarRules = require("./parseGrammarRules");
 
 module.exports = parseGrammar;
@@ -14,7 +14,7 @@ function parseGrammar(lines) {
     u.scope(parseGrammar.name, x => {
         result = {};
         result.rules = parseGrammarRules(lines);
-        result.proofs = parseGrammarProofs(lines);
+        result.proofs = parseProofs(lines);
     });
     return result;
 }
