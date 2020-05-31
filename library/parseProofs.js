@@ -16,9 +16,8 @@ function parseProofs(lines) {
             if (line.length === 0) {
                 processCurrent();
             }
-            let t = tokens(line);
-            if (isProofLine(t)) {
-                current.push(t);
+            if (isProofLine(line)) {
+                current.push(tokens(line));
             }
         });
         processCurrent();

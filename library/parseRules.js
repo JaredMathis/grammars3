@@ -17,8 +17,8 @@ function parseRules(lines) {
             if (parts.length === 2) {
                 // All rules should be processed first.
                 u.assert(() => rules);
-                let left = tokens(parts[0].trim());
-                let right = tokens(parts[1].trim());
+                let left = tokens(parts[0]);
+                let right = tokens(parts[1]);
                 let rule = { left, right };
                 result.push(rule);
             } else if (line === "") {

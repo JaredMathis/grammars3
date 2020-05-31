@@ -4,14 +4,14 @@ const getRuleSeparator = require("./getRuleSeparator")
 
 module.exports = isProofLine;
 
-function isProofLine(tokens) {
+function isProofLine(line) {
     let result;
     u.scope(isProofLine.name, x => {
-        u.assertIsStringArray(() => tokens);
+        u.assertIsString(() => line);
 
-        let containsEmptyString = tokens.indexOf('') >= 0;
-        let containsRuleSeparator = tokens.indexOf(getRuleSeparator()) >= 0;
-        result = !containsEmptyString && !containsRuleSeparator;
+        let isEmptyString = line === "";
+        let containsRuleSeparator = line.indexOf(getRuleSeparator()) >= 0;
+        result = !isEmptyString && !containsRuleSeparator;
     });
     return result;
 }
