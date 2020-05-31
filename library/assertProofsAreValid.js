@@ -14,8 +14,8 @@ function assertProofsAreValid(rules, proofs) {
         u.loop(proofs, proof => {
             u.assertIsStringArrayNested(() => proof);
 
-            let valid = isValidProof(newRules, proof);
-            u.assert(() => valid.valid === true);
+            let ivp = isValidProof(newRules, proof);
+            u.assert(() => ivp.valid === true);
             newRules.push({ left: proof[0], right: u.arrayLast(proof) });
         });
     });
