@@ -12,9 +12,11 @@ u.scope(__filename, x => {
         ]);
     // Cannot contain two rule separators
     u.assertThrows(() => parseGrammarRules(
-        ['a | a a |', 'b | b a', '', 'a', 'a a', 'a a a']),
-        [
-            { left: ['a'], right: ['a', 'a'] },
-            { left: ['b'], right: ['b', 'a'] }
-        ]);
+        ['a | a | a', 'b | b a', '', 'a', 'a a', 'a a a']));
+    // Rules must come first
+    u.assertThrows(() => parseGrammarRules(
+        ['a | a a', 'b | b a', '', 'a', 'a a', 'a a a', 'c | b a']));
+    // Cannot contain duplicate rule 
+    u.assertThrows(() => parseGrammarRules(
+        ['a | a a', 'a | a a']));
 });
