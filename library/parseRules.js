@@ -2,11 +2,11 @@
 const u = require("wlj-utilities");
 const getRuleSeparator = require("./getRuleSeparator");
 
-module.exports = parseGrammarRules;
+module.exports = parseRules;
 
-function parseGrammarRules(lines) {
+function parseRules(lines) {
     let result;
-    u.scope(parseGrammarRules.name, x => {
+    u.scope(parseRules.name, x => {
         // Rules are processed, first.
         let rules = true;
         result = [];

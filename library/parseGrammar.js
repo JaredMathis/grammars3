@@ -1,7 +1,7 @@
 
 const u = require("wlj-utilities");
 const parseProofs = require("./parseProofs");
-const parseGrammarRules = require("./parseGrammarRules");
+const parseRules = require("./parseRules");
 
 module.exports = parseGrammar;
 
@@ -21,7 +21,7 @@ function parseGrammar(input) {
         u.assertIsStringArray(() => lines);
 
         result = {};
-        result.rules = parseGrammarRules(lines);
+        result.rules = parseRules(lines);
         result.proofs = parseProofs(lines);
     });
     return result;
