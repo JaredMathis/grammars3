@@ -8,7 +8,7 @@ u.scope(__filename, x => {
     let proof;
     let grammar;
 
-    grammar = parseGrammar(`a | a a
+    grammar = parseGrammar(`a # a a
 
 a
 a a
@@ -17,8 +17,8 @@ a a a`);
     proof = grammar.proofs[0];
     u.assertIsEqualJson(() => prove(grammar.rules, 'a'.split(' '), 'a a a'.split(' '), 5), proof);
 
-    grammar = parseGrammar(`a | a a
-a | b
+    grammar = parseGrammar(`a # a a
+a # b
 
 a
 a a

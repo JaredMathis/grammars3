@@ -8,7 +8,7 @@ u.scope(__filename, x => {
     let grammar;
 
     grammar = parseGrammar(`
-a | a a
+a # a a
 
 a a
 a a a
@@ -18,7 +18,7 @@ u.merge(x,()=>grammar.proofs);
 assertProofsAreValid(grammar.rules, grammar.proofs);
 
 grammar = parseGrammar(`
-a | a a
+a # a a
 
 a a a
 a a a
@@ -29,7 +29,7 @@ u.assertThrows(() => assertProofsAreValid(grammar.rules, grammar.proofs));
 
     let rulesLengthBefore;
 grammar = parseGrammar(`
-a | a a
+a # a a
 
 a
 a a
@@ -43,7 +43,7 @@ u.assertIsEqualJson(() => rulesLengthBefore, grammar.rules.length);
 
 // Can a grammar file learn grammar rules as it does proofs?
 grammar = parseGrammar(`
-a | a a
+a # a a
 
 a
 a a
@@ -62,7 +62,7 @@ u.merge(x,()=>grammar.proofs);
 assertProofsAreValid(grammar.rules, grammar.proofs);
 
 grammar = parseGrammar(`
-a | b
+a # b
 
 a a a
 a a b
@@ -74,7 +74,7 @@ u.merge(x,()=>grammar.proofs);
 assertProofsAreValid(grammar.rules, grammar.proofs);
 
 grammar = parseGrammar(`
-a | b
+a # b
 
 a a a
 a a b

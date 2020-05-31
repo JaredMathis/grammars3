@@ -8,5 +8,5 @@ u.scope(__filename, x => {
     u.assert(() => isProofLine(tokens('a')));
     u.assert(() => isProofLine(tokens('a a')));
     u.assert(() => isProofLine(tokens('a a a')));
-    u.assert(() => !isProofLine(tokens('a | a a')));
+    u.assert(() => !isProofLine(tokens('a # a a')));
 });

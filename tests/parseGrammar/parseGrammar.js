@@ -5,13 +5,13 @@ const parseGrammar = require("../../library/parseGrammar.js");
 
 u.scope(__filename, x => {
     u.assertIsEqualJson(() => parseGrammar(
-        ['a | a a']),
+        ['a # a a']),
         {
             rules: [{ left: ['a'], right: ['a', 'a'] }],
             proofs: [],
         })
     u.assertIsEqualJson(() => parseGrammar(
-        ['a | a a', 'b | b a']),
+        ['a # a a', 'b # b a']),
         {
             rules: [
                 { left: ['a'], right: ['a', 'a'] },
@@ -20,7 +20,7 @@ u.scope(__filename, x => {
             proofs: []
         })
     u.assertIsEqualJson(() => parseGrammar(
-        ['a | a a', 'b | b a', '', 'a', 'a a', 'a a a']),
+        ['a # a a', 'b # b a', '', 'a', 'a a', 'a a a']),
         {
             rules: [
                 { left: ['a'], right: ['a', 'a'] },

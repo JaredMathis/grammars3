@@ -6,7 +6,7 @@ module.exports = getRuleSeparator;
 function getRuleSeparator() {
     let result;
     u.scope(getRuleSeparator.name, x => {
-        result = "|";
+        result = "#";
     });
     return result;
 }
