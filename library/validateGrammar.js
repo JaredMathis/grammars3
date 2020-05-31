@@ -9,7 +9,7 @@ function validateGrammar(grammar) {
         u.assertIsArray(() => grammar.rules);
         u.assertIsArray(() => grammar.proofs);
 
-        assertGrammarRulesAreUnique(grammar.rules);
+        assertRulesAreUnique(grammar.rules);
     });
     return result;
 }

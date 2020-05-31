@@ -1,15 +1,15 @@
 
 const u = require("wlj-utilities");
 
-const assertGrammarRulesAreUnique = require("../../library/assertGrammarRulesAreUnique.js");
+const assertRulesAreUnique = require("../../library/assertRulesAreUnique.js");
 const parseGrammarRules = require("../../library/parseGrammarRules.js");
 
 u.scope(__filename, x => {
     let rules = parseGrammarRules(
         ['a | a a', 'a | a a']);
-    u.assertThrows(() => assertGrammarRulesAreUnique(rules));
+    u.assertThrows(() => assertRulesAreUnique(rules));
     
     rules = parseGrammarRules(
         ['a | a a']);
-    assertGrammarRulesAreUnique(rules);
+    assertRulesAreUnique(rules);
 });

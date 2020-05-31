@@ -8,6 +8,6 @@ module.exports.isRuleLine = require("./library/isRuleLine.js");
 module.exports.getRuleSeparator = require("./library/getRuleSeparator.js");
 module.exports.parseGrammarRules = require("./library/parseGrammarRules.js");
 module.exports.validateGrammar = require("./library/validateGrammar.js");
-module.exports.assertGrammarRulesAreUnique = require("./library/assertGrammarRulesAreUnique.js");
+module.exports.assertRulesAreUnique = require("./library/assertRulesAreUnique.js");
 module.exports.isValidSubstitution = require("./library/isValidSubstitution.js");
 module.exports.isValidProof = require("./library/isValidProof.js");

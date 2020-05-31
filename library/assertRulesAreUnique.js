@@ -1,11 +1,11 @@
 
 const u = require("wlj-utilities");
 
-module.exports = assertGrammarRulesAreUnique;
+module.exports = assertRulesAreUnique;
 
-function assertGrammarRulesAreUnique(rules) {
+function assertRulesAreUnique(rules) {
     let result;
-    u.scope(assertGrammarRulesAreUnique.name, x => {
+    u.scope(assertRulesAreUnique.name, x => {
         u.assertIsArray(() => rules);
 
         u.loop(rules, rule => {
