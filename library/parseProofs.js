@@ -1,6 +1,7 @@
 
 const u = require("wlj-utilities");
 const isProofLine = require("./isProofLine");
+const tokens = require("./tokens");
 
 module.exports = parseProofs;
 
@@ -15,9 +16,9 @@ function parseProofs(lines) {
             if (line.length === 0) {
                 processCurrent();
             }
-            let tokens = line.split(' ');
-            if (isProofLine(tokens)) {
-                current.push(tokens);
+            let t = tokens(line);
+            if (isProofLine(t)) {
+                current.push(t);
             }
         });
         processCurrent();
