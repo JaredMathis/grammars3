@@ -1,6 +1,7 @@
 
 const u = require("wlj-utilities");
 const getRuleSeparator = require("./getRuleSeparator");
+const tokens = require("./tokens");
 
 module.exports = parseRules;
 
@@ -16,8 +17,8 @@ function parseRules(lines) {
             if (parts.length === 2) {
                 // All rules should be processed first.
                 u.assert(() => rules);
-                let left = parts[0].trim().split(' ');
-                let right = parts[1].trim().split(' ');
+                let left = tokens(parts[0].trim());
+                let right = tokens(parts[1].trim());
                 let rule = { left, right };
                 result.push(rule);
             } else if (line === "") {
