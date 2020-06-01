@@ -15,3 +15,5 @@ module.exports.assertProofsAreValid = require("./library/assertProofsAreValid.js
 module.exports.prove = require("./library/prove.js");
 module.exports.tokens = require("./library/tokens.js");
 module.exports.substitute = require("./library/substitute.js");
+module.exports.processInclude = require("./library/processInclude.js");
+module.exports.getIncludeToken = require("./library/getIncludeToken.js");

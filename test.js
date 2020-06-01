@@ -13,3 +13,5 @@ require("./tests/assertProofsAreValid/assertProofsAreValid.js");
 require("./tests/substitute/substitute.js");
 require("./tests/prove/prove.js");
 require("./tests/tokens/tokens.js");
+require("./tests/processInclude/processInclude.js");
+require("./tests/getIncludeToken/getIncludeToken.js");
