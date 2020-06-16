@@ -1,0 +1,24 @@
+{
+  "name": "wlj-grammars3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaredMathis/grammars3.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/JaredMathis/grammars3/issues"
+  },
+  "homepage": "https://github.com/JaredMathis/grammars3#readme",
+  "dependencies": {
+    "wlj-utilities": "^1.0.80"
+  }
+}
